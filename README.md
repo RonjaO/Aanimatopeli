@@ -1,0 +1,1 @@
+Avasin ensimmäisen kerran tiedoston komentoriviltä!
