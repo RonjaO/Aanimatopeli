@@ -6,3 +6,4 @@ Tuntikirjanpito
 25.12. 1 h: Pari ääntä lisää, virheiden korjailua. Checkstyle-raportti herjaa ärsyttävistä asioista.
 26.12. 1 h: pelilogiikan koodausta.
 27.12. 1,5 h: Pelilogiikka loppuun. Testasin äänten toistamista omalla testitiedostolla, mutta se ei tehnyt oikein mitään...
+28.12. 2,5 h: Onnistuin äänten soittamistestissäni. Lisäilin pelilogiikkaan äänten toistamisen, kirjoitin näppäimistönkuuntelijan ja käyttöliittymän alkua. Jostain syystä peli ei soita mitään.
