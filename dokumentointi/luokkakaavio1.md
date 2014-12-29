@@ -10,8 +10,13 @@ _ väliaikainen yhteys, katkoviiva
 [Omena]
 [Mato]
 [Matopeli]
+[Aantentoistaja]
+[Aani]
 
 [Pala]1..*<-[Mato]
 [Pala]#-[Omena]
 [Matopeli]->[Mato]
 [Matopeli]->[Omena]
+[Aantentoistaja]->[Mato]
+[Aantentoistaja]->[Omena]
+[Matopeli]->[Aantentoistaja]
