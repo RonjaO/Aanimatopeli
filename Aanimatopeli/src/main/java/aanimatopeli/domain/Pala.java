@@ -1,7 +1,7 @@
-package aanimatopeli.domain;
+Ôªøpackage aanimatopeli.domain;
 
 /**
- * Pala-luokka on t‰rke‰ palanen sek‰ madon ett‰ omenan kannalta.
+ * Pala-luokka on t√§rke√§ palanen sek√§ madon ett√§ omenan kannalta.
  */
 public class Pala {
 
@@ -24,7 +24,7 @@ public class Pala {
 /**
  * Tarkistetaan, osuuko pala johonkin toiseen palaan.
  * @param toinen Pala-olio
- * @return totuusarvo siit‰, osuiko
+ * @return totuusarvo siit√§, osuiko
  */
     public boolean osuu(Pala pala) {
         if (this.x == pala.getX() && this.y == pala.getY()) {

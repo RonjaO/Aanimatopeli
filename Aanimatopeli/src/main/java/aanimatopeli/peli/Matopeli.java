@@ -1,4 +1,4 @@
-package aanimatopeli.peli;
+Ôªøpackage aanimatopeli.peli;
 
 import aanimatopeli.Suunta;
 import aanimatopeli.domain.Mato;
@@ -52,7 +52,7 @@ public class Matopeli extends Timer implements ActionListener {
     }
 
 /**
- * M‰‰ritt‰‰ yhden liikahduksen tapahtumat
+ * M√§√§ritt√§√§ yhden liikahduksen tapahtumat
  * jatkuu, jos jatkuu-muuttuja on true
  */
     @Override 
@@ -105,7 +105,7 @@ public class Matopeli extends Timer implements ActionListener {
     }
     
 /**
- * Luo uuden omena-oolion. Tarkistaa luomisen yhteydess‰, ettei omena osu matoon.
+ * Luo uuden omena-oolion. Tarkistaa luomisen yhteydess√§, ettei omena osu matoon.
  * @return palautetaan uusi omena.
  */
     public Omena luoOmena() {

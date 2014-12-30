@@ -1,4 +1,4 @@
-package aanimatopeli.domain;
+﻿package aanimatopeli.domain;
 
 /**
  * Omena, jonka toiminnallisuus on sama kuin Palan.

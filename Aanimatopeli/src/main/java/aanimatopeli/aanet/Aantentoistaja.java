@@ -1,4 +1,4 @@
-package aanimatopeli.aanet;
+Ôªøpackage aanimatopeli.aanet;
 
 import java.io.*;
 import javax.sound.sampled.*;
@@ -8,7 +8,7 @@ import aanimatopeli.domain.Omena;
 import aanimatopeli.domain.Pala;
 
 /**
- * Lataa enum-arvojen perusteella ‰‰nitiedostot
+ * Lataa enum-arvojen perusteella √§√§nitiedostot
  * ja toistaa ne halutulla tavalla
  */
 public class Aantentoistaja {
@@ -17,7 +17,7 @@ public class Aantentoistaja {
     private Pala omena;
 
 /**
- * Toistaa omenan sijainnin kertovaa ‰‰nt‰ luuppina
+ * Toistaa omenan sijainnin kertovaa √§√§nt√§ luuppina
  */
     public void kerroSuunta(Aani aanitehoste) {
         Clip clip = lataa(aanitehoste);
@@ -30,7 +30,7 @@ public class Aantentoistaja {
     }
     
 /**
- * Lopettaa ‰‰nitiedoston toistamisen, mik‰li se on k‰ynniss‰
+ * Lopettaa √§√§nitiedoston toistamisen, mik√§li se on k√§ynniss√§
  */
     public void lopeta(Aani aanitehoste) {
         Clip clip = lataa(aanitehoste);
@@ -41,7 +41,7 @@ public class Aantentoistaja {
     }
 
 /**
- * Toistaa annetun ‰‰nitiedoston kerran
+ * Toistaa annetun √§√§nitiedoston kerran
 */ 
     public void toista(Aani aanitehoste) {
         Clip clip = lataa(aanitehoste);
@@ -50,8 +50,8 @@ public class Aantentoistaja {
     }
     
 /**
- * Lataa ‰‰nitiedoston annetun enum-arvon perusteella
- * @return ‰‰nitiedostoa vastaava Clip-muuttuja
+ * Lataa √§√§nitiedoston annetun enum-arvon perusteella
+ * @return √§√§nitiedostoa vastaava Clip-olio
  */
     private Clip lataa(Aani aanitehoste) {
         try {
@@ -70,9 +70,9 @@ public class Aantentoistaja {
     }
     
 /**
- * Laskee madon p‰‰n ja omenan sijaintien perusteella, mik‰ suuntatiedostoista 
- * tulee toistaa ja mik‰ lopettaa
- * Pit‰isi ehk‰ olla jossain muussa luokassa kuin t‰‰ll‰
+ * Laskee madon p√§√§n ja omenan sijaintien perusteella, mik√§ suuntatiedostoista 
+ * tulee toistaa ja mik√§ lopettaa
+ * Pit√§isi ehk√§ olla jossain muussa luokassa kuin t√§√§ll√§
  */
     public void suunta() {
         if (this.mato.getPaa().getX() == this.omena.getX()) {

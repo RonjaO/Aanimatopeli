@@ -1,8 +1,8 @@
-package  aanimatopeli.aanet;
+Ôªøpackage  aanimatopeli.aanet;
 
 import java.io.File;
 /**
- * enum-arvot pelin k‰ytt‰mille ‰‰nitiedostoille
+ * enum-arvot pelin k√§ytt√§mille √§√§nitiedostoille
  */
 public enum Aani {
 

@@ -1,4 +1,4 @@
-package aanimatopeli;
+﻿package aanimatopeli;
 
 import java.io.*;
 import javax.sound.sampled.*;
