@@ -35,13 +35,20 @@ public class Mato {
         return this.palat.size();
     }
     
+/**
+ * @return lista paloista, joista mato muodostuu
+*/ 
     public List<Pala> getPalat() {
         return this.palat;
     }
-    
+  
+/**
+ * Liikuttaa matoa suunta-muuttujan mukaisesti
+* luo aina uuden p‰‰n uuteen sijaintiin
+*/ 
     public void liiku() {
-        int paanX = this.palat.get(getPituus() - 1).getX();
-        int paanY = this.palat.get(getPituus() - 1).getX();
+        int paanX = this.palat.get(this.palat.size() - 1).getX();
+        int paanY = this.palat.get(this.palat.size() - 1).getY();
         
         if (this.suunta == Suunta.VASEN) {
             this.palat.add(new Pala(paanX - 1, paanY));
@@ -63,6 +70,10 @@ public class Mato {
             
     }
     
+/**
+ * Kasvattaa madon pituutta yhdell‰
+ * tiettyj‰ poikkeustilanteita lukuunottamatta
+ */
     public void kasva() {
         if (getPituus() < 3) {
             return;
@@ -71,6 +82,11 @@ public class Mato {
         this.kasvaKutsuttu = true;
     }
     
+/**
+ * Selvitt‰‰, osuuko mato annettuun palaan
+* @param pala (yleisimmin omena)
+* return totuusarvo siit‰, osuiko vai eikˆ
+*/ 
     public boolean osuu(Pala pala) {
         for (Pala madonPala : this.palat) {
             if (madonPala.osuu(pala)) {
@@ -81,6 +97,10 @@ public class Mato {
         return false;
     }
     
+/**
+ * Selvitt‰‰, osuuko jokin madon paloista itseens‰
+ * @return totuusarvo siit‰, osuiko vai eikˆ
+ */
     public boolean osuuItseensa() {
         for (Pala tutkittava : this.palat) {
             for (Pala pala : this.palat) {
@@ -95,6 +115,13 @@ public class Mato {
         }
         
         return false;
+    }
+    
+/**
+ * @return madon p‰‰n Pala-esitys
+*/ 
+    public Pala getPaa() {
+        return this.palat.get(getPituus() - 1);
     }
     
 }

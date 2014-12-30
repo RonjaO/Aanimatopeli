@@ -1,5 +1,8 @@
 package aanimatopeli.domain;
 
+/**
+ * Pala-luokka on tärkeä palanen sekä madon että omenan kannalta.
+ */
 public class Pala {
 
     private int x;
@@ -18,6 +21,11 @@ public class Pala {
         return this.y;
     }
     
+/**
+ * Tarkistetaan, osuuko pala johonkin toiseen palaan.
+ * @param toinen Pala-olio
+ * @return totuusarvo siitä, osuiko
+ */
     public boolean osuu(Pala pala) {
         if (this.x == pala.getX() && this.y == pala.getY()) {
             return true;
