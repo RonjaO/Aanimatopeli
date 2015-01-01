@@ -9,3 +9,4 @@ Tuntikirjanpito
 28.12. 3,5 h: Onnistuin äänten soittamistestissäni. Lisäilin pelilogiikkaan äänten toistamisen, kirjoitin näppäimistönkuuntelijan ja käyttöliittymän alkua. Jostain syystä peli ei soita mitään. Siirsin äänitiedostot eri kansioon ja Aantentoistaja-olion kautta äänten toistaminen kyllä onnistuu, mutta peli on edelleen vaiti...
 29.12. 3,5 h: Testejä, koodikatselmointia ja javadocin aloittamista. Testit toimi niin kauan, kunnes lisäsin javadoc-kommentteja. Ilmeisesti maven ei pitänyt ääkkösistä. Enkä ehtinyt sitten lisätä pit-reporttia, koska nyt testit heittää vaan erroria ja aikaisemmin minulla ei ollut nettiä.
 30.12. 1 h: Gitin sisällön kummastelua.
+1.1. 3 H: Merkkikoodauksen muutokset ja Ääntentoistajan hienosäätöä. Nyt peliä voi jokseenkin onnistuneesti pelata, mutta Ääntentoistajan lopeta-metodi ei toimi ja looppeja tulee soimaan päällekäin.

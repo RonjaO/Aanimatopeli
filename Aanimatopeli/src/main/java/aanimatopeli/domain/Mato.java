@@ -1,4 +1,4 @@
-﻿package aanimatopeli.domain;
+package aanimatopeli.domain;
 
 import java.util.List;
 import java.util.ArrayList;

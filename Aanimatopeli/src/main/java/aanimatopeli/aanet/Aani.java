@@ -1,4 +1,4 @@
-﻿package aanimatopeli.aanet;
+package aanimatopeli.aanet;
 
 import java.io.File;
 
@@ -13,7 +13,7 @@ public enum Aani {
     OMPPUVASEN("OmppuVasen.wav"),
     OMPPUOIKEA("OmppuOikea.wav"),
     TORMAYS("Tormays.wav"),
-    ToRMAAITSEENSA("TormaaItseensa.wav"),
+    TORMAAITSEENSA("TormaaItseensa.wav"),
     SEINAVAROItUS("SeinaVaroitus.wav"),
     MATOVAROITUS("MatoVaroitus.wav");
     

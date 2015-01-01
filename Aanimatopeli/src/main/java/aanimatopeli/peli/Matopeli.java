@@ -1,4 +1,4 @@
-﻿package aanimatopeli.peli;
+package aanimatopeli.peli;
 
 import aanimatopeli.Suunta;
 import aanimatopeli.domain.Mato;
@@ -37,6 +37,8 @@ public class Matopeli extends Timer implements ActionListener {
         addActionListener(this);
         this.toistaja.setMato(this.mato);
         this.toistaja.setOmena(this.omena);
+        setInitialDelay(1000);
+        this.start();
     }
 
     public boolean jatkuu() {
@@ -58,6 +60,11 @@ public class Matopeli extends Timer implements ActionListener {
     @Override 
     public void actionPerformed(ActionEvent ae) {
         if (!jatkuu()) {
+            this.stop();
+            this.toistaja.lopeta(Aani.OMPPUYLOS);
+            this.toistaja.lopeta(Aani.OMPPUALAS);
+            this.toistaja.lopeta(Aani.OMPPUOIKEA);
+            this.toistaja.lopeta(Aani.OMPPUVASEN);
             return;
         }
         
@@ -73,7 +80,7 @@ public class Matopeli extends Timer implements ActionListener {
         }
         
         if (this.mato.osuuItseensa()) {
-            this.toistaja.toista(Aani.TORMAYS);
+            this.toistaja.toista(Aani.TORMAAITSEENSA);
             this.jatkuu = false;
         }
         

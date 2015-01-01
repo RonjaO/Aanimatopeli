@@ -1,4 +1,4 @@
-﻿package aanimatopeli.aanet;
+package aanimatopeli.aanet;
 
 import java.io.*;
 import javax.sound.sampled.*;
@@ -21,7 +21,7 @@ public class Aantentoistaja {
     public void kerroSuunta(Aani aanitehoste) {
         Clip clip = lataa(aanitehoste);
         
-        if (clip.isRunning()) {
+        if (clip.isActive()) {
             return;
         }
         
@@ -53,7 +53,7 @@ public class Aantentoistaja {
  * @param ääneen viittaava enum-arvo
  * @return äänitiedostoa vastaava clip-olio
  */
-    private Clip lataa(aani aanitehoste) {
+    private Clip lataa(Aani aanitehoste) {
         try {
             AudioInputStream aani = AudioSystem.getAudioInputStream(aanitehoste.getTiedosto());
             
@@ -79,18 +79,18 @@ public class Aantentoistaja {
             lopeta(Aani.OMPPUOIKEA);
             lopeta(Aani.OMPPUVASEN);
         } else if (this.mato.getPaa().getX() < this.omena.getX()) {
-            kerroSuunta(Aani.OMPPUOIKEA);
+            toista(Aani.OMPPUOIKEA);
         } else if (this.mato.getPaa().getX() > this.omena.getX()) {
-            kerroSuunta(Aani.OMPPUVASEN);
+            toista(Aani.OMPPUVASEN);
         }
         
         if (this.mato.getPaa().getY() == this.omena.getY()) {
             lopeta(Aani.OMPPUYLOS);
             lopeta(Aani.OMPPUALAS);
-        } else if (this.mato.getPaa().getY() < this.omena.getY()) {
-            kerroSuunta(Aani.OMPPUYLOS);
         } else if (this.mato.getPaa().getY() > this.omena.getY()) {
-            kerroSuunta(Aani.OMPPUALAS);
+            toista(Aani.OMPPUYLOS);
+        } else if (this.mato.getPaa().getY() < this.omena.getY()) {
+            toista(Aani.OMPPUALAS);
         }
     }
     

@@ -1,4 +1,4 @@
-﻿package aanimatopeli.domain;
+package aanimatopeli.domain;
 
 /**
  * Pala-luokka on tärkeä palanen sekä madon että omenan kannalta.

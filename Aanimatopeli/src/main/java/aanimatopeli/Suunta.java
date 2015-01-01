@@ -1,4 +1,4 @@
-﻿package aanimatopeli;
+package aanimatopeli;
 
 public enum Suunta {
 

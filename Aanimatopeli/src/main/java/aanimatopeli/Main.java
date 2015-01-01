@@ -1,4 +1,4 @@
-﻿package aanimatopeli;
+package aanimatopeli;
 
 import javax.swing.SwingUtilities;
 import aanimatopeli.gui.Kayttoliittyma;

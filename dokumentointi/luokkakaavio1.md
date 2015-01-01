@@ -1,3 +1,4 @@
+(Luokkakaavio on vaan tekstimuodossa, koska olen sokea, enkä siis itse hyödy kuvallisesta esityksestä lainkaan.)
 Merkkejä:
 - normaali yhteys
 _ väliaikainen yhteys, katkoviiva
