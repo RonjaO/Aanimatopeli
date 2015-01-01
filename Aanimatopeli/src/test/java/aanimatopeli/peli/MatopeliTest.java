@@ -1,13 +1,9 @@
-package aanimatopeli.peli;
+﻿package aanimatopeli.peli;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 import aanimatopeli.Suunta;
-import aanimatopeli.aanet.Aantentoistaja;
-import aanimatopeli.aanet.Aani;
-import aanimatopeli.domain.Mato;
-import aanimatopeli.domain.Pala;
 
 
 public class MatopeliTest {
@@ -35,7 +31,7 @@ public class MatopeliTest {
             this.matopeli.getMato().liiku();
         }
         this.matopeli.start();
-        Assert.assertEquals(true, this.matopeli.jatkuu());
+        Assert.assertEquals(false, this.matopeli.jatkuu());
     }
     
     @Test
@@ -48,7 +44,7 @@ public class MatopeliTest {
         this.matopeli.getMato().setSuunta(Suunta.ALAS);
         this.matopeli.start();
         
-        Assert.assertEquals(true, this.matopeli.jatkuu());
+        Assert.assertEquals(false, this.matopeli.jatkuu());
     }
     
 }

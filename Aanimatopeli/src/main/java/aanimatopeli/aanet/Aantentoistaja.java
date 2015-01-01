@@ -2,20 +2,19 @@
 
 import java.io.*;
 import javax.sound.sampled.*;
-import javax.sound.sampled.AudioSystem;
 import aanimatopeli.domain.Mato;
 import aanimatopeli.domain.Omena;
 import aanimatopeli.domain.Pala;
 
 /**
- * Lataa enum-arvojen perusteella äänitiedostot
+ * Lataa enum-arvojen avulla äänitiedostot
  * ja toistaa ne halutulla tavalla
  */
 public class Aantentoistaja {
 
     private Mato mato;
     private Pala omena;
-
+    
 /**
  * Toistaa omenan sijainnin kertovaa ääntä luuppina
  */
@@ -26,37 +25,38 @@ public class Aantentoistaja {
             return;
         }
         
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
+        clip.loop(Clip.LOOP_CONTINUOUSLY );
     }
     
 /**
- * Lopettaa äänitiedoston toistamisen, mikäli se on käynnissä
+ * Lopettaa äänitiedoston soittamisen, mikäli se on käynnissä
  */
     public void lopeta(Aani aanitehoste) {
         Clip clip = lataa(aanitehoste);
-
+        
         if (clip.isRunning()) {
             clip.stop();
         }
     }
-
+    
 /**
  * Toistaa annetun äänitiedoston kerran
-*/ 
+ */
     public void toista(Aani aanitehoste) {
         Clip clip = lataa(aanitehoste);
-
+        
         clip.start();
     }
     
 /**
  * Lataa äänitiedoston annetun enum-arvon perusteella
- * @return äänitiedostoa vastaava Clip-olio
+ * @param ääneen viittaava enum-arvo
+ * @return äänitiedostoa vastaava clip-olio
  */
-    private Clip lataa(Aani aanitehoste) {
+    private Clip lataa(aani aanitehoste) {
         try {
             AudioInputStream aani = AudioSystem.getAudioInputStream(aanitehoste.getTiedosto());
-        
+            
             Clip clip = AudioSystem.getClip();
             
             clip.open(aani);
@@ -70,7 +70,7 @@ public class Aantentoistaja {
     }
     
 /**
- * Laskee madon pään ja omenan sijaintien perusteella, mikä suuntatiedostoista 
+ * Laskee madon pään ja omenan sijaintien perusteella, mikä suuntatiedostoista
  * tulee toistaa ja mikä lopettaa
  * Pitäisi ehkä olla jossain muussa luokassa kuin täällä
  */
@@ -78,9 +78,7 @@ public class Aantentoistaja {
         if (this.mato.getPaa().getX() == this.omena.getX()) {
             lopeta(Aani.OMPPUOIKEA);
             lopeta(Aani.OMPPUVASEN);
-        }
-        
-        if (this.mato.getPaa().getX() < this.omena.getX()) {
+        } else if (this.mato.getPaa().getX() < this.omena.getX()) {
             kerroSuunta(Aani.OMPPUOIKEA);
         } else if (this.mato.getPaa().getX() > this.omena.getX()) {
             kerroSuunta(Aani.OMPPUVASEN);
@@ -89,15 +87,13 @@ public class Aantentoistaja {
         if (this.mato.getPaa().getY() == this.omena.getY()) {
             lopeta(Aani.OMPPUYLOS);
             lopeta(Aani.OMPPUALAS);
-        }
-        
-        if (this.mato.getPaa().getY() < this.omena.getY()) {
+        } else if (this.mato.getPaa().getY() < this.omena.getY()) {
             kerroSuunta(Aani.OMPPUYLOS);
         } else if (this.mato.getPaa().getY() > this.omena.getY()) {
             kerroSuunta(Aani.OMPPUALAS);
         }
     }
-        
+    
     public void setMato(Mato mato) {
         this.mato = mato;
     }
@@ -105,5 +101,5 @@ public class Aantentoistaja {
     public void setOmena(Pala omena) {
         this.omena = omena;
     }
-        
+    
 }
