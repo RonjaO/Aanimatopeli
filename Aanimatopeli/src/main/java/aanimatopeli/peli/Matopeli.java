@@ -40,7 +40,7 @@ public class Matopeli extends Timer implements ActionListener {
         
         addActionListener(this);
         setInitialDelay(1000);
-        this.start();
+        
     }
 
     public boolean jatkuu() {

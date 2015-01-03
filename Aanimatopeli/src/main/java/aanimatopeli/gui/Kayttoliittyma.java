@@ -31,6 +31,14 @@ public class Kayttoliittyma implements Runnable {
     }
     
     public void luoKomponentit(Container container) {
+        JButton aloitus = new JButton("Aloita peli!");
+        
+        Tapahtumankuuntelija kuuntelija = new Tapahtumankuuntelija(this.matopeli);
+        
+        aloitus.addActionListener(kuuntelija);
+        
+        container.add(aloitus);
+        
         Nappaimistonkuuntelija nappaimistonkuuntelija = new Nappaimistonkuuntelija(this.matopeli.getMato());
         
         frame.addKeyListener(nappaimistonkuuntelija);

@@ -31,7 +31,7 @@ public class Aantentoistaja {
             return;
         }
         
-        clip.loop(Clip.LOOP_CONTINUOUSLY );
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
     
 /**
