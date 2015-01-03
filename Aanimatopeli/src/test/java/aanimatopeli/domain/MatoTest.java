@@ -1,4 +1,4 @@
-﻿package aanimatopeli.domain;
+package aanimatopeli.domain;
 
 import org.junit.Before;
 import org.junit.Test;

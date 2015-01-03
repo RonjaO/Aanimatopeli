@@ -14,7 +14,7 @@ public enum Aani {
     OMPPUOIKEA("OmppuOikea.wav"),
     TORMAYS("Tormays.wav"),
     TORMAAITSEENSA("TormaaItseensa.wav"),
-    SEINAVAROItUS("SeinaVaroitus.wav"),
+    SEINAVAROITUS("SeinaVaroitus.wav"),
     MATOVAROITUS("MatoVaroitus.wav");
     
     private File tiedosto;

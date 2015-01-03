@@ -32,6 +32,10 @@ public class Aanitesti {
                 toistaja.lopeta(Aani.OMPPUALAS);
                 toistaja.lopeta(Aani.OMPPUOIKEA);
             }
+            
+            if (komento.equals("omppu")) {
+                toistaja.toista(Aani.SYOOMPPU);
+            }
         }
     }
     

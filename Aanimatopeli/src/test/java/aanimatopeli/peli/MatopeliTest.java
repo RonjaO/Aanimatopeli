@@ -1,4 +1,4 @@
-﻿package aanimatopeli.peli;
+package aanimatopeli.peli;
 
 import org.junit.Before;
 import org.junit.Test;

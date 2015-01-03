@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Aantentoistaja toistaja = new Aantentoistaja();
 
-        Matopeli matopeli = new Matopeli(20, 20, toistaja);
+        Matopeli matopeli = new Matopeli(10, 15, toistaja);
         
         Kayttoliittyma kali = new Kayttoliittyma(matopeli);
         

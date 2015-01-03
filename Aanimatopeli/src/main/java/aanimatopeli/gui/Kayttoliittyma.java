@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
+import javax.swing.JButton;
 import aanimatopeli.peli.Matopeli;
 
 public class Kayttoliittyma implements Runnable {
@@ -33,6 +34,7 @@ public class Kayttoliittyma implements Runnable {
         Nappaimistonkuuntelija nappaimistonkuuntelija = new Nappaimistonkuuntelija(this.matopeli.getMato());
         
         frame.addKeyListener(nappaimistonkuuntelija);
+        
     }
         
     public JFrame getFrame() {
