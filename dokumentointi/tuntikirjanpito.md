@@ -11,4 +11,5 @@ Tuntikirjanpito
 30.12. 1 h: Gitin sisällön kummastelua.
 1.1. 4 H: Merkkikoodauksen muutokset ja Ääntentoistajan hienosäätöä. Nyt peliä voi jokseenkin onnistuneesti pelata, mutta Ääntentoistajan lopeta-metodi ei toimi ja looppeja tulee soimaan päällekäin. -> Ääniasia korjattu, ei päällekäisiä looppeja ja lopeta toimii kyllä.
 2.1. 3 H: pelin muokkausta. Pelaaminen onnistuu jo hyvin sujuvasti, mato jopa törmää seinään, mitä se ei aikaisemmin oikeasti tehnyt... Maven heittää erroria edelleen, vaikka kaikkien tiedostojen merkistökoodaukset on muutettu.
-3.1. 2 H: Omenan sijainnin korjailua ja yksinkertainen käyttöliittymä, joka ei kuitenkaan toimi toivotusti.
+3.1. 5 H: Omenan sijainnin korjailua ja yksinkertainen käyttöliittymä, joka ei kuitenkaan toimi toivotusti. Selvittelyä, miten näppäimistönkuuntelija kuuntelisi napin jälkeen ja mato liikkuisi. Ei ratkaisua.
+4.1. 1 h: Nappula ja näppäimistönkuuntelija pelittää. Korjailtu näppäimistönkuuntelijaa, ei siirrä suuntaa ylös, jos ollaan menossa alas.

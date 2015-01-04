@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import javax.swing.JButton;
 import aanimatopeli.peli.Matopeli;
+import aanimatopeli.domain.Mato;
 
 public class Kayttoliittyma implements Runnable {
 
@@ -31,18 +32,17 @@ public class Kayttoliittyma implements Runnable {
     }
     
     public void luoKomponentit(Container container) {
-        JButton aloitus = new JButton("Aloita peli!");
-        
-        Tapahtumankuuntelija kuuntelija = new Tapahtumankuuntelija(this.matopeli);
-        
-        aloitus.addActionListener(kuuntelija);
-        
-        container.add(aloitus);
-        
         Nappaimistonkuuntelija nappaimistonkuuntelija = new Nappaimistonkuuntelija(this.matopeli.getMato());
         
         frame.addKeyListener(nappaimistonkuuntelija);
         
+        JButton aloitus = new JButton("Aloita peli!");
+        
+        Tapahtumankuuntelija tapahtumankuuntelija = new Tapahtumankuuntelija(this.matopeli, frame);
+        
+        aloitus.addActionListener(tapahtumankuuntelija);
+        
+        container.add(aloitus);
     }
         
     public JFrame getFrame() {

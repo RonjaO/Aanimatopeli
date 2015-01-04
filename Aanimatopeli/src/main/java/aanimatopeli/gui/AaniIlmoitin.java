@@ -93,7 +93,7 @@ public class AaniIlmoitin {
                 return;
             }
         } else if (this.mato.getSuunta() == Suunta.ALAS) {
-            if (this.korkeus - this.mato.getPaa().getY() <= 3) {
+            if (this.korkeus - 1 - this.mato.getPaa().getY() <= 3) {
                 this.toistaja.toista(Aani.SEINAVAROITUS);
                 return;
             }
@@ -103,7 +103,7 @@ public class AaniIlmoitin {
                 return;
             }
         } else if (this.mato.getSuunta() == Suunta.OIKEA) {
-            if (this.leveys - this.mato.getPaa().getX() <= 3) {
+            if (this.leveys  - 1- this.mato.getPaa().getX() <= 3) {
                 this.toistaja.toista(Aani.SEINAVAROITUS);
                 return;
             }

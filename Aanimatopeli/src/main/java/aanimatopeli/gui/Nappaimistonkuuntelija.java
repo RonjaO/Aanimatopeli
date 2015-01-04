@@ -3,8 +3,11 @@ package aanimatopeli.gui;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import aanimatopeli.domain.Mato;
 import aanimatopeli.Suunta;
+import aanimatopeli.peli.Matopeli;
 
 public class Nappaimistonkuuntelija implements KeyListener {
 
