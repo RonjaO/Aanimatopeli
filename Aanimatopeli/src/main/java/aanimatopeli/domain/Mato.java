@@ -44,8 +44,8 @@ public class Mato {
   
 /**
  * Liikuttaa matoa suunta-muuttujan mukaisesti
-* luo aina uuden p‰‰n uuteen sijaintiin
-*/ 
+ * luo aina uuden p√§√§n uuteen sijaintiin
+ */ 
     public void liiku() {
         int paanX = this.palat.get(this.palat.size() - 1).getX();
         int paanY = this.palat.get(this.palat.size() - 1).getY();
@@ -71,8 +71,8 @@ public class Mato {
     }
     
 /**
- * Kasvattaa madon pituutta yhdell‰
- * tiettyj‰ poikkeustilanteita lukuunottamatta
+ * Kasvattaa madon pituutta yhdell√§
+ * tiettyj√§ poikkeustilanteita lukuunottamatta
  */
     public void kasva() {
         if (getPituus() < 3) {
@@ -83,9 +83,9 @@ public class Mato {
     }
     
 /**
- * Selvitt‰‰, osuuko mato annettuun palaan
+ * Selvitt√§√§, osuuko mato annettuun palaan
 * @param pala (yleisimmin omena)
-* return totuusarvo siit‰, osuiko vai eikˆ
+* @return totuusarvo siit√§, osuiko vai eik√∂
 */ 
     public boolean osuu(Pala pala) {
         for (Pala madonPala : this.palat) {
@@ -98,8 +98,8 @@ public class Mato {
     }
     
 /**
- * Selvitt‰‰, osuuko jokin madon paloista itseens‰
- * @return totuusarvo siit‰, osuiko vai eikˆ
+ * Selvitt√§√§, osuuko jokin madon paloista itseens√§
+ * @return totuusarvo siit√§, osuiko vai eik√∂
  */
     public boolean osuuItseensa() {
         for (Pala tutkittava : this.palat) {
@@ -118,7 +118,7 @@ public class Mato {
     }
     
 /**
- * @return madon p‰‰n Pala-esitys
+ * @return madon p√§√§n Pala-esitys
 */ 
     public Pala getPaa() {
         return this.palat.get(getPituus() - 1);

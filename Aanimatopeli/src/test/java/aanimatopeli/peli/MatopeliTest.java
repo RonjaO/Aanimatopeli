@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 import aanimatopeli.Suunta;
+import aanimatopeli.aanet.Aantentoistaja;
+import aanimatopeli.gui.AaniIlmoitin;
 
 
 public class MatopeliTest {
@@ -30,7 +32,7 @@ public class MatopeliTest {
         for (int i = 0; i < 20; i++) {
             this.matopeli.getMato().liiku();
         }
-        this.matopeli.start();
+        this.matopeli.liikahdus();
         Assert.assertEquals(false, this.matopeli.jatkuu());
     }
     
@@ -42,7 +44,7 @@ public class MatopeliTest {
         this.matopeli.getMato().setSuunta(Suunta.VASEN);
         this.matopeli.getMato().liiku();
         this.matopeli.getMato().setSuunta(Suunta.ALAS);
-        this.matopeli.start();
+        this.matopeli.liikahdus();
         
         Assert.assertEquals(false, this.matopeli.jatkuu());
     }

@@ -20,13 +20,21 @@ public class Nappaimistonkuuntelija implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            this.mato.setSuunta(Suunta.VASEN);
+            if (this.mato.getSuunta() != Suunta.OIKEA) {
+                this.mato.setSuunta(Suunta.VASEN);
+            }
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            this.mato.setSuunta(Suunta.OIKEA);
+            if (this.mato.getSuunta() != Suunta.VASEN) {
+                this.mato.setSuunta(Suunta.OIKEA);
+            }
         } else if (e.getKeyCode() == KeyEvent.VK_UP) {
-            this.mato.setSuunta(Suunta.YLOS);
+            if (this.mato.getSuunta() != Suunta.ALAS) {
+                this.mato.setSuunta(Suunta.YLOS);
+            }
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            this.mato.setSuunta(Suunta.ALAS);
+            if (this.mato.getSuunta() != Suunta.YLOS) {
+                this.mato.setSuunta(Suunta.ALAS);
+            }
         }
     }
     
