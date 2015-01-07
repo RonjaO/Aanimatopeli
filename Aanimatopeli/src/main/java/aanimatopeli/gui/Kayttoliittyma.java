@@ -5,6 +5,10 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
 import aanimatopeli.peli.Matopeli;
 import aanimatopeli.domain.Mato;
 
@@ -37,13 +41,37 @@ public class Kayttoliittyma implements Runnable {
         frame.addKeyListener(nappaimistonkuuntelija);
         
         JButton aloitus = new JButton("Aloita peli!");
+        JLabel tekstikentta = new JLabel();
+        JButton ohjeet = new JButton("Ohjeet");
+        JButton pisteet = new JButton("TOP10 pisteet");
+
         
-        Tapahtumankuuntelija tapahtumankuuntelija = new Tapahtumankuuntelija(this.matopeli, frame);
+        Tapahtumankuuntelija tapahtumankuuntelija = new Tapahtumankuuntelija(this.matopeli, frame,
+                tekstikentta, aloitus, ohjeet, pisteet);
         
         aloitus.addActionListener(tapahtumankuuntelija);
+        ohjeet.addActionListener(tapahtumankuuntelija);
+        pisteet.addActionListener(tapahtumankuuntelija);
         
-        container.add(aloitus);
+        
+        container.add(tekstikentta);
+        
+        container.add(aloitus, BorderLayout.SOUTH);
+        
+        
+        container.add(valikko(ohjeet, pisteet), BorderLayout.WEST);
     }
+    
+    public JPanel valikko(JButton ohjeet, JButton pisteet) {
+        JPanel panel = new JPanel(new GridLayout(3, 1));
+        
+        panel.add(ohjeet);
+        panel.add(pisteet);
+        
+        return panel;
+    }
+        
+        
         
     public JFrame getFrame() {
         return frame;

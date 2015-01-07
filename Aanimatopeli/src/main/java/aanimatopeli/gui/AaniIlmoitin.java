@@ -103,7 +103,7 @@ public class AaniIlmoitin {
                 return;
             }
         } else if (this.mato.getSuunta() == Suunta.OIKEA) {
-            if (this.leveys  - 1- this.mato.getPaa().getX() <= 3) {
+            if (this.leveys - 1 - this.mato.getPaa().getX() <= 3) {
                 this.toistaja.toista(Aani.SEINAVAROITUS);
                 return;
             }

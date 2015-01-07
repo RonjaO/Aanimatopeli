@@ -76,7 +76,7 @@ public class Matopeli extends Timer implements ActionListener {
         return this.omena;
     }
     
-    public void setOmena() {
+    public void setOmena(Omena omena) {
         this.omena = omena;
     }
     

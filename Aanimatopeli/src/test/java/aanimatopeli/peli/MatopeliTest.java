@@ -6,7 +6,8 @@ import org.junit.Assert;
 import aanimatopeli.Suunta;
 import aanimatopeli.aanet.Aantentoistaja;
 import aanimatopeli.gui.AaniIlmoitin;
-
+import aanimatopeli.domain.Omena;
+import aanimatopeli.domain.Pala;
 
 public class MatopeliTest {
 
@@ -48,5 +49,24 @@ public class MatopeliTest {
         
         Assert.assertEquals(false, this.matopeli.jatkuu());
     }
+    
+    @Test
+    public void matoKasvaaSyotyaanOmenan() {
+        for (int i = 0; i < 5; i++) {
+            this.matopeli.getMato().liiku();
+        }
+        
+        int x = this.matopeli.getMato().getPaa().getX() + 1;
+        int y = this.matopeli.getMato().getPaa().getY();
+        
+        
+        Omena omena = new Omena(x, y);
+        this.matopeli.setOmena(omena);
+        
+        this.matopeli.liikahdus();
+        
+        Assert.assertEquals(4, this.matopeli.getMato().getPituus());
+    }
+    
     
 }
