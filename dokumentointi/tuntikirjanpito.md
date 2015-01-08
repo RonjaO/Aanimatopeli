@@ -14,3 +14,5 @@ Tuntikirjanpito
 3.1. 5 H: Omenan sijainnin korjailua ja yksinkertainen käyttöliittymä, joka ei kuitenkaan toimi toivotusti. Selvittelyä, miten näppäimistönkuuntelija kuuntelisi napin jälkeen ja mato liikkuisi. Ei ratkaisua.
 4.1. 1 h: Nappula ja näppäimistönkuuntelija pelittää. Korjailtu näppäimistönkuuntelijaa, ei siirrä suuntaa ylös, jos ollaan menossa alas.
 7.1. 6 h: Pisteiden lukemista ja tallentamista tiedostoon (ei toimi...), testi lisätty. Pitin raportti ei taaskaan toimi, aikaleimakansio kyllä tulee, mutta raporttitiedosto puuttuu. Lisensointi ja sekvenssikaavio.
+8.1. 2 h: Edelleen pit-raportin (tai sen puuttumisen) kummastelua. Pisteiden hallinnoimisen sainkin sitten kaikin puolin toimimaan.
+

@@ -1,0 +1,18 @@
+Peli k‰ynnistyy "Aloita peli!" -napista.
+
+Matoa ohjataan nuolin‰pp‰imill‰. Alussa mato kulkee oikealle. Se l‰htee pelikent‰n vasemmasta laidasta, pystysuunnassa noin puolestav‰list‰.
+
+Omenan sijainti kerrotaan suhteessa madon p‰‰h‰n, v‰litt‰m‰tt‰ kulkusuunnasta. Omenan sijaintia ilmaisevat ‰‰net ovat:
+- ylh‰‰ll‰: pianon korkea H-‰‰ni
+- alhaalla: pianon matala C-‰‰ni
+- vasemmalla: kitaran matala E-‰‰ni
+- oikealla: kitaran korkea G-‰‰ni
+Samaan aikaan voi kuulua yhdest‰ kahteen suunta‰‰nt‰. Jos mato on korkeussuunnassa samalla tasolla omenan kanssa, soi vain ‰‰ni, joka kertoo, onko omena vasemmalla vai oikealla. Vastaavasti silloin, kun madon p‰‰ on leveyssuunnassa omenan kanssa samalla tasolla, kerrotaan, onko omena ylh‰‰ll‰ vai alhaalla.
+
+HUOM: Jos sinulla on tarkka s‰velkorva, ‰‰nten ep‰ireisyys saattaa h‰irit‰.
+
+Kun madon kulkusuunnassa sein‰ tulee l‰helle, kuuluu varoitus‰‰nen‰ kilahdus triangelista. Ensimm‰inen varoitus tulee, kun sein‰ on kolmen "liikahduksen" p‰‰ss‰. Jos mato kullkee suoraan kohti sein‰‰, ehtii kuulua kolme kilahdusta, ennen kuin mato tˆrm‰‰ sein‰‰n.
+
+Kun madon kulkusuunnassa vastaan tulee jokin toinen madon osa, kuuluu varoitus‰‰nen‰ kaksi nopeaa kilahdusta triangelista. Kuten sein‰st‰, madon osasta varoitetaan, jos se on enint‰‰n kolmen "liikahduksen" p‰‰ss‰.
+
+Mato kasvaa aina, kun se saa syˆty‰ omenan. Peli p‰‰ttyy, jos mato tˆrm‰‰ sein‰‰n tai itseens‰.
