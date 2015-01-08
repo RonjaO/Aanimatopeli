@@ -25,7 +25,7 @@ public class Kayttoliittyma implements Runnable {
     public void run() {
         frame = new JFrame("Äänimatopeli");
         
-        frame.setPreferredSize(new Dimension(400, 300));
+        frame.setPreferredSize(new Dimension(400, 700));
         
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
@@ -44,14 +44,17 @@ public class Kayttoliittyma implements Runnable {
         JLabel tekstikentta = new JLabel();
         JButton ohjeet = new JButton("Ohjeet");
         JButton pisteet = new JButton("TOP10 pisteet");
+        JButton aanet = new JButton("Kuuntele äänet");
 
         
         Tapahtumankuuntelija tapahtumankuuntelija = new Tapahtumankuuntelija(this.matopeli, frame,
-                tekstikentta, aloitus, ohjeet, pisteet);
+                tekstikentta, aloitus, ohjeet, pisteet, aanet);
+                this.matopeli.setTekstikentta(tekstikentta);
         
         aloitus.addActionListener(tapahtumankuuntelija);
         ohjeet.addActionListener(tapahtumankuuntelija);
         pisteet.addActionListener(tapahtumankuuntelija);
+        aanet.addActionListener(tapahtumankuuntelija);
         
         
         container.add(tekstikentta);
@@ -59,14 +62,15 @@ public class Kayttoliittyma implements Runnable {
         container.add(aloitus, BorderLayout.SOUTH);
         
         
-        container.add(valikko(ohjeet, pisteet), BorderLayout.WEST);
+        container.add(valikko(ohjeet, pisteet, aanet), BorderLayout.WEST);
     }
     
-    public JPanel valikko(JButton ohjeet, JButton pisteet) {
+    public JPanel valikko(JButton ohjeet, JButton pisteet, JButton aanet) {
         JPanel panel = new JPanel(new GridLayout(3, 1));
         
         panel.add(ohjeet);
         panel.add(pisteet);
+        panel.add(aanet);
         
         return panel;
     }

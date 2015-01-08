@@ -9,9 +9,12 @@ import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
+import javax.swing.JLabel;
 import aanimatopeli.aanet.Aani;
 import aanimatopeli.aanet.Aantentoistaja;
 import aanimatopeli.gui.AaniIlmoitin;
+import aanimatopeli.pisteet.Pistelaskuri;
+import aanimatopeli.pisteet.Pistehallinnoija;
 
 /**
  * Pelilogiikka
@@ -26,6 +29,8 @@ public class Matopeli extends Timer implements ActionListener {
     private Random random = new Random();
     private Aantentoistaja toistaja;
     private AaniIlmoitin ilmoitin;
+    private JLabel tekstikentta;
+    private Pistelaskuri laskuri;
 
     public Matopeli(int leveys, int korkeus, Aantentoistaja toistaja) {
         super(2000, null);
@@ -37,6 +42,7 @@ public class Matopeli extends Timer implements ActionListener {
         this.toistaja = toistaja;
         
         this.ilmoitin = new AaniIlmoitin(this.mato, this.omena, this.leveys, this.korkeus, this.toistaja);
+        this.laskuri = new Pistelaskuri();
         
         addActionListener(this);
         setInitialDelay(1000);
@@ -109,6 +115,7 @@ public class Matopeli extends Timer implements ActionListener {
             this.toistaja.lopeta(Aani.OMPPUALAS);
             this.toistaja.lopeta(Aani.OMPPUOIKEA);
             this.toistaja.lopeta(Aani.OMPPUVASEN);
+            peliPaattyi();
             return;
         }
         
@@ -127,6 +134,7 @@ public class Matopeli extends Timer implements ActionListener {
             this.mato.kasva();
             this.omena = luoOmena();
             this.ilmoitin.setOmena(this.omena);
+            this.laskuri.lisaaPiste();
             this.setInitialDelay(1000 / this.mato.getPituus());
         }
         
@@ -146,6 +154,28 @@ public class Matopeli extends Timer implements ActionListener {
         }
     }
     
-        
+    public void setTekstikentta(JLabel tekstikentta) {
+        this.tekstikentta = tekstikentta;
+    }
     
+    public void peliPaattyi() {
+        this.tekstikentta.setText("Peli päättyi! \n \n Sait " + this.laskuri.getPisteet() + " pistettä");
+        
+        Pistehallinnoija hallinnoija = null;
+        try {
+            hallinnoija = new Pistehallinnoija();
+        } catch (Exception e) {
+            System.out.println("Tiedostoa ei loydy");
+        }
+        
+        hallinnoija.lisaaPisteet(this.laskuri.getPisteet());
+        
+        try {
+            hallinnoija.tallennaPisteetTiedostoon();
+        } catch (Exception e) {
+            System.out.println("tiedostoon tallentaminen ei onnistu");
+        }
+    }
+    
+        
 }
