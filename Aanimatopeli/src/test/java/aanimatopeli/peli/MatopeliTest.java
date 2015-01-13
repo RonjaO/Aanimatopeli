@@ -29,45 +29,45 @@ public class MatopeliTest {
         Assert.assertEquals(false, this.matopeli.getMato().osuu(matopeli.luoOmena()));
     }
     
-    @Test
-    public void peliEiJAtkuJosMatoOsuuSeinaan() {
-        for (int i = 0; i < 20; i++) {
-            this.matopeli.getMato().liiku();
-        }
-        this.matopeli.liikahdus();
-        Assert.assertEquals(false, this.matopeli.jatkuu());
-    }
+    // @Test
+    // public void peliEiJAtkuJosMatoOsuuSeinaan() {
+        // for (int i = 0; i < 20; i++) {
+            // this.matopeli.getMato().liiku();
+        // }
+        // this.matopeli.liikahdus();
+        // Assert.assertEquals(false, this.matopeli.jatkuu());
+    // }
     
-    @Test
-    public void peliPaattyyKunMatoOsuuItseensa() {
-        this.matopeli.getMato().liiku();
-        this.matopeli.getMato().setSuunta(Suunta.YLOS);
-        this.matopeli.getMato().liiku();
-        this.matopeli.getMato().setSuunta(Suunta.VASEN);
-        this.matopeli.getMato().liiku();
-        this.matopeli.getMato().setSuunta(Suunta.ALAS);
-        this.matopeli.liikahdus();
+    // @Test
+    // public void peliPaattyyKunMatoOsuuItseensa() {
+        // this.matopeli.getMato().liiku();
+        // this.matopeli.getMato().setSuunta(Suunta.YLOS);
+        // this.matopeli.getMato().liiku();
+        // this.matopeli.getMato().setSuunta(Suunta.VASEN);
+        // this.matopeli.getMato().liiku();
+        // this.matopeli.getMato().setSuunta(Suunta.ALAS);
+        // this.matopeli.liikahdus();
         
-        Assert.assertEquals(false, this.matopeli.jatkuu());
-    }
+        // Assert.assertEquals(false, this.matopeli.jatkuu());
+    // }
     
-    @Test
-    public void matoKasvaaSyotyaanOmenan() {
-        for (int i = 0; i < 5; i++) {
-            this.matopeli.getMato().liiku();
-        }
+    // @Test
+    // public void matoKasvaaSyotyaanOmenan() {
+        // for (int i = 0; i < 5; i++) {
+            // this.matopeli.getMato().liiku();
+        // }
         
-        int x = this.matopeli.getMato().getPaa().getX() + 1;
-        int y = this.matopeli.getMato().getPaa().getY();
+        // int x = this.matopeli.getMato().getPaa().getX() + 1;
+        // int y = this.matopeli.getMato().getPaa().getY();
         
         
-        Omena omena = new Omena(x, y);
-        this.matopeli.setOmena(omena);
+        // Omena omena = new Omena(x, y);
+        // this.matopeli.setOmena(omena);
         
-        this.matopeli.liikahdus();
+        // this.matopeli.liikahdus();
         
-        Assert.assertEquals(4, this.matopeli.getMato().getPituus());
-    }
+        // Assert.assertEquals(4, this.matopeli.getMato().getPituus());
+    // }
     
     
 }
