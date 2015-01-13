@@ -5,24 +5,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import aanimatopeli.aanet.Aani;
 import aanimatopeli.aanet.Aantentoistaja;
 
+/**
+ * Tapahtumankuuntelija määrittää kaikkien käyttöliittymän nappien toiminnan
+ */
 public class Tapahtumankuuntelija implements ActionListener {
 
     private Matopeli peli;
     private JFrame frame;
-    private JLabel tekstikentta;
+    private JTextArea tekstikentta;
     private JButton aloitus;
     private JButton ohjeet;
     private JButton pisteet;
     private JButton aanet;
     
-    public Tapahtumankuuntelija(Matopeli peli, JFrame frame, JLabel t, JButton a, JButton o, JButton p, JButton aa) {
+    public Tapahtumankuuntelija(Matopeli peli, JFrame frame, JTextArea t, JButton a, JButton o, JButton p, JButton aa) {
         this.peli = peli;
         this.frame = frame;
         this.tekstikentta = t;
@@ -35,17 +38,18 @@ public class Tapahtumankuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == aloitus) {
+            this.peli.aloitaUusiPeli();
             this.frame.requestFocus();
             this.peli.start();
             this.tekstikentta.setText("Pelataan...");
         }
         
         if (ae.getSource() == this.ohjeet) {
-            this.tekstikentta.setText("Ohjeet: \n" + lueTiedosto("Ohjeö.txt"));
+            this.tekstikentta.setText("Ohjeet: \n" + lueTiedosto("Ohje.txt"));
         }
         
         if (ae.getSource() == pisteet) {
-            this.tekstikentta.setText("TOP 10 pisteet: " + lueTiedosto("pisteettop10.txt"));
+            this.tekstikentta.setText("TOP 10 pisteet: \n" + lueTiedosto("pisteettop10.txt"));
         }
         
         if (ae.getSource() == aanet) {
@@ -57,6 +61,11 @@ public class Tapahtumankuuntelija implements ActionListener {
         }
     }
     
+/**
+ * Lukee annetun tiedoston sisällön ja palauttaa sen merkkijonoesityksen
+ * @param tiedoston nimi
+ * @return tiedoston sisältö merkkijonona
+ */
     public String lueTiedosto(String tiedosto) {
         Scanner lukija = null;
         
@@ -69,7 +78,7 @@ public class Tapahtumankuuntelija implements ActionListener {
         String teksti = "";
         
         while (lukija.hasNextLine()) {
-            teksti += lukija.nextLine() + "\n";
+            teksti += lukija.nextLine() + " \n";
         }
         
         lukija.close();

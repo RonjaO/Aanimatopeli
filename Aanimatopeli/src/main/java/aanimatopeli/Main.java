@@ -5,8 +5,14 @@ import aanimatopeli.gui.Kayttoliittyma;
 import aanimatopeli.peli.Matopeli;
 import aanimatopeli.aanet.Aantentoistaja;
 
+/**
+ * Main-luokka, jonka ajamalla ohjelma käynnistyy
+ */
 public class Main {
 
+/**
+ * Luodaan matopeli-olio jne
+ */
     public static void main(String[] args) {
         Aantentoistaja toistaja = new Aantentoistaja();
 

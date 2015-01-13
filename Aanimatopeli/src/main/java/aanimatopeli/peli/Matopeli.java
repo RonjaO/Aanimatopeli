@@ -9,10 +9,11 @@ import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
-import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import aanimatopeli.aanet.Aani;
 import aanimatopeli.aanet.Aantentoistaja;
 import aanimatopeli.gui.AaniIlmoitin;
+import aanimatopeli.gui.Nappaimistonkuuntelija;
 import aanimatopeli.pisteet.Pistelaskuri;
 import aanimatopeli.pisteet.Pistehallinnoija;
 
@@ -29,7 +30,8 @@ public class Matopeli extends Timer implements ActionListener {
     private Random random = new Random();
     private Aantentoistaja toistaja;
     private AaniIlmoitin ilmoitin;
-    private JLabel tekstikentta;
+    private JTextArea tekstikentta;
+    private Nappaimistonkuuntelija nappaimistonkuuntelija;
     private Pistelaskuri laskuri;
 
     public Matopeli(int leveys, int korkeus, Aantentoistaja toistaja) {
@@ -37,7 +39,7 @@ public class Matopeli extends Timer implements ActionListener {
         this.leveys = leveys;
         this.korkeus = korkeus;
         this.jatkuu = true;
-        this.mato = new Mato(1, korkeus / 2, Suunta.OIKEA);
+        this.mato = new Mato(0, korkeus / 2, Suunta.OIKEA);
         this.omena = luoOmena();
         this.toistaja = toistaja;
         
@@ -49,6 +51,10 @@ public class Matopeli extends Timer implements ActionListener {
         
     }
 
+/**
+ * Plauattaa totuusarvon siitä, jatkuuko peli
+ * @return pelin jatkumisen totuusarvo
+ */
     public boolean jatkuu() {
         return this.jatkuu;
     }
@@ -62,8 +68,7 @@ public class Matopeli extends Timer implements ActionListener {
     }
 
 /**
- * Määrittää yhden liikahduksen tapahtumat
- * jatkuu, jos jatkuu-muuttuja on true
+ * Kutsuu metodia, joka määrittää yhden liikahduksen tapahtumat
  */
     @Override 
     public void actionPerformed(ActionEvent ae) {
@@ -87,7 +92,7 @@ public class Matopeli extends Timer implements ActionListener {
     }
     
 /**
- * Luo uuden omena-oolion. Tarkistaa luomisen yhteydessä, ettei omena osu matoon.
+ * Luo uuden omena-olion. Tarkistaa luomisen yhteydessä, ettei omena osu matoon.
  * @return palautetaan uusi omena.
  */
     public Omena luoOmena() {
@@ -107,7 +112,11 @@ public class Matopeli extends Timer implements ActionListener {
 
         return omena;
     }
-    
+
+/**
+ * Määrittää yhden liikahduksen tapahtumat
+ * Peli jatkuu, jos jatkuu-muuttuja on true
+ */
     public void liikahdus() {
         if (!jatkuu()) {
             this.stop();
@@ -123,6 +132,8 @@ public class Matopeli extends Timer implements ActionListener {
         this.ilmoitin.varoitukset();
 
         this.mato.liiku();
+        
+        this.ilmoitin.suunta();
         
         if (this.mato.osuu(this.omena)) {
             this.toistaja.toista(Aani.SYOOMPPU);
@@ -154,10 +165,19 @@ public class Matopeli extends Timer implements ActionListener {
         }
     }
     
-    public void setTekstikentta(JLabel tekstikentta) {
+    public void setTekstikentta(JTextArea tekstikentta) {
         this.tekstikentta = tekstikentta;
     }
     
+    public void setNappaimistonkuuntelija(Nappaimistonkuuntelija kuuntelija) {
+        this.nappaimistonkuuntelija = kuuntelija;
+    }
+    
+/**
+ * Kutsutaan, kun peli on päättynyt.
+ * Kertoo käyttöliittymän tekstikentälle saadun pistemäärän
+ * ja antaa pisteet myös pistehallinnoijalle
+ */
     public void peliPaattyi() {
         this.tekstikentta.setText("Peli päättyi! \n \n Sait " + this.laskuri.getPisteet() + " pistettä");
         
@@ -177,5 +197,20 @@ public class Matopeli extends Timer implements ActionListener {
         }
     }
     
+/**    
+ * Tekee tarvittavat toimenpiteet, jotta voidaan aloittaa uusi peli
+ */
+    public void aloitaUusiPeli() {
+        if (this.jatkuu == false) {
+            this.mato = new Mato(0, this.korkeus / 2, Suunta.OIKEA);
+            this.omena = luoOmena();
+            this.jatkuu = true;
+        
+            this.laskuri.nollaa();
+            this.ilmoitin.setOmena(this.omena);
+            this.ilmoitin.setMato(this.mato);
+            this.nappaimistonkuuntelija.setMato(this.mato);
+        }
+    }
         
 }

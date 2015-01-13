@@ -5,13 +5,16 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import aanimatopeli.peli.Matopeli;
 import aanimatopeli.domain.Mato;
 
+/**
+ * Graafinen käyttöliittymä.
+ */
 public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
@@ -35,13 +38,17 @@ public class Kayttoliittyma implements Runnable {
         frame.setVisible(true);
     }
     
+/**
+ * Luodaan käyttöliittymän kaikki nappulat ja annetaan tarpeelliset osaset
+ * tapahtumankuuntelijalle ja muille luokille käyttöön.
+ */
     public void luoKomponentit(Container container) {
         Nappaimistonkuuntelija nappaimistonkuuntelija = new Nappaimistonkuuntelija(this.matopeli.getMato());
         
         frame.addKeyListener(nappaimistonkuuntelija);
         
         JButton aloitus = new JButton("Aloita peli!");
-        JLabel tekstikentta = new JLabel();
+        JTextArea tekstikentta = new JTextArea();
         JButton ohjeet = new JButton("Ohjeet");
         JButton pisteet = new JButton("TOP10 pisteet");
         JButton aanet = new JButton("Kuuntele äänet");
@@ -49,7 +56,8 @@ public class Kayttoliittyma implements Runnable {
         
         Tapahtumankuuntelija tapahtumankuuntelija = new Tapahtumankuuntelija(this.matopeli, frame,
                 tekstikentta, aloitus, ohjeet, pisteet, aanet);
-                this.matopeli.setTekstikentta(tekstikentta);
+        this.matopeli.setTekstikentta(tekstikentta);
+        this.matopeli.setNappaimistonkuuntelija(nappaimistonkuuntelija);
         
         aloitus.addActionListener(tapahtumankuuntelija);
         ohjeet.addActionListener(tapahtumankuuntelija);
@@ -65,6 +73,10 @@ public class Kayttoliittyma implements Runnable {
         container.add(valikko(ohjeet, pisteet, aanet), BorderLayout.WEST);
     }
     
+/**
+ * Vasemman reunan valikko-paneeli
+ * @return palautetaan JPanel GridLayoutina, kolme nappulaa.
+ */
     public JPanel valikko(JButton ohjeet, JButton pisteet, JButton aanet) {
         JPanel panel = new JPanel(new GridLayout(3, 1));
         

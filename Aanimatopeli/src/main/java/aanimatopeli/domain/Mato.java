@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import aanimatopeli.Suunta;
 
 
+/**
+ * Pelin mato. Koostuu paloista.
+ */
 public class Mato {
 
     private List<Pala> palat;
@@ -84,9 +87,9 @@ public class Mato {
     
 /**
  * Selvittää, osuuko mato annettuun palaan
-* @param pala (yleisimmin omena)
-* @return totuusarvo siitä, osuiko vai eikö
-*/ 
+ * @param pala (yleisimmin omena)
+ * @return totuusarvo siitä, osuiko vai eikö
+ */ 
     public boolean osuu(Pala pala) {
         for (Pala madonPala : this.palat) {
             if (madonPala.osuu(pala)) {

@@ -7,6 +7,10 @@ import aanimatopeli.domain.Pala;
 import aanimatopeli.domain.Omena;
 import aanimatopeli.Suunta;
 
+/**
+ * Täällä lasketaan mitä ääniä soitetaan
+ * omenan suunnasta ja varoituksista
+ */
 public class AaniIlmoitin {
 
     private Mato mato;
@@ -27,6 +31,13 @@ public class AaniIlmoitin {
         this.omena = omena;
     }
     
+    public void setMato(Mato mato ) {
+        this.mato = mato;
+    }
+    
+/**
+ * Laskee omenan suunnan madon päähän suhteutettuna
+ */
     public void suunta() {
         if (this.mato.getPaa().getX() == this.omena.getX()) {
             this.toistaja.lopeta(Aani.OMPPUOIKEA);
@@ -46,7 +57,10 @@ public class AaniIlmoitin {
             this.toistaja.kerroSuunta(Aani.OMPPUALAS);
         }
     }
-    
+
+/**
+ * Kutsuu madosta ja seinästä varottavia metodeita
+ */
     public void varoitukset() {
         
         matovaroitus();
@@ -54,6 +68,10 @@ public class AaniIlmoitin {
         seinavaroitus();
     }
     
+/**
+ * Lasketaan, onko madon kulkusuunnassa vaaraa törmätä itseensä
+ * Jos madon päästä enintään kolmen liikahduksen päässä on joku muu madon pala, soitetaan varoitusääni
+ */
     public void matovaroitus() {
         Pala paa = this.mato.getPaa();
         
@@ -86,6 +104,10 @@ public class AaniIlmoitin {
         }
     }
     
+/**
+ * Lasketaan, onko madon kulkusuunnassa vaaraa törmätä seinään.
+ * Jos seinä on enintään kolmen liikahduksen päässä, soitetaan varoitusääni
+ */
     public void seinavaroitus() {
         if (this.mato.getSuunta() == Suunta.YLOS) {
             if (this.mato.getPaa().getY() <= 3) {

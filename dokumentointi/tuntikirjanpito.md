@@ -15,4 +15,5 @@ Tuntikirjanpito
 4.1. 1 h: Nappula ja näppäimistönkuuntelija pelittää. Korjailtu näppäimistönkuuntelijaa, ei siirrä suuntaa ylös, jos ollaan menossa alas.
 7.1. 6 h: Pisteiden lukemista ja tallentamista tiedostoon (ei toimi...), testi lisätty. Pitin raportti ei taaskaan toimi, aikaleimakansio kyllä tulee, mutta raporttitiedosto puuttuu. Lisensointi ja sekvenssikaavio.
 8.1. 3 h: Edelleen pit-raportin (tai sen puuttumisen) kummastelua. Pisteiden hallinnoimisen sainkin sitten kaikin puolin toimimaan. Vähän äänten kanssa leikkimistä (muokkailua) ja käyttöliittymään mahdollisuus kuunnella kaikki äänet.
-
+10.1. 1 h: Puuttuvien javadoc-kommenttien lisäys.
+12.1. 3 h: Javadoc-dokumentti ei onnistu, enkä ymmärrä syytä. Pitin epäonnistumisen ja jar-tiedoston epäonnistumisen keksin, syynä testit, jotka heittää erroria. Kun blokkaa ne kommenttimerkinnöillä, sekä jar ett pit onnaa. Pelin hienosäätöä.

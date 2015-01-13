@@ -8,6 +8,7 @@ import aanimatopeli.aanet.Aantentoistaja;
 import aanimatopeli.gui.AaniIlmoitin;
 import aanimatopeli.domain.Omena;
 import aanimatopeli.domain.Pala;
+import aanimatopeli.aanet.Aani;
 
 public class MatopeliTest {
 

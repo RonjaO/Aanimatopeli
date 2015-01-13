@@ -8,26 +8,36 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Luokka, joka pitää huolta tiedostosta, joka sisältää pistetilastot
+ */
 public class Pistehallinnoija {
 
     private Scanner lukija;
     private FileWriter kirjoittaja;
     private ArrayList<Integer> pisteet;
     
+/**
+ * Konstruktorissa luetaan pisteet sisältävä tiedosto ja talletetaan pisteet listaan
+ */
     public Pistehallinnoija() throws FileNotFoundException, IOException {
         this.lukija = new Scanner(new File("pisteettop10.txt"));
         this.pisteet = new ArrayList<Integer>();
         
-       while (this.lukija.hasNextLine()) {
-           String rivi = this.lukija.nextLine();
+        while (this.lukija.hasNextLine()) {
+            String rivi = this.lukija.nextLine();
            
-           String[] pilkottu = rivi.split(" ");
-           int pistemaara = Integer.parseInt(pilkottu[1]);
+            String[] pilkottu = rivi.split(" ");
+            int pistemaara = Integer.parseInt(pilkottu[1]);
            
-           this.pisteet.add(pistemaara);
-       }
+            this.pisteet.add(pistemaara);
+        }
     }
-    
+
+/**
+ * Lisää listaan uuden pistemäärän
+ * @param listaan lisättävät pisteet
+ */ 
     public void lisaaPisteet(int pistemaara) {
         if (!this.pisteet.contains(pistemaara)) {
             this.pisteet.add(pistemaara);
@@ -36,7 +46,11 @@ public class Pistehallinnoija {
         Collections.sort(this.pisteet);
         Collections.reverse(this.pisteet);
     }
-    
+ 
+/**
+ * Tallentaa listasta maksimissaan 10 parasta pistettä tiedostoon
+ * ylikirjoittaa vanhan sisällön
+ */ 
     public void tallennaPisteetTiedostoon() throws IOException {
         kirjoittaja = new FileWriter("pisteettop10.txt");
         if (this.pisteet.size() == 0) {

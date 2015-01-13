@@ -13,6 +13,11 @@ _ väliaikainen yhteys, katkoviiva
 [Matopeli]
 [Aantentoistaja]
 [Aani]
+[AaniIlmoitin]
+[Pistelaskuri]
+[Pistehallinnoija]
+[Kayttoliittyma]
+[Tapahtumankuuntelija]
 
 [Pala]1..*<-[Mato]
 [Pala]#-[Omena]
@@ -21,3 +26,11 @@ _ väliaikainen yhteys, katkoviiva
 [Aantentoistaja]->[Mato]
 [Aantentoistaja]->[Omena]
 [Matopeli]->[Aantentoistaja]
+[Matopeli]->[AaniIlmoitin]
+[Matopeli]->[Pistelaskuri]
+[Matopeli]_[Pistehallinnoija]
+[Kayttoliittyma]->[Matopeli]
+[Kayttoliittyma]->[Tapahtumankuuntelija]
+[Tapahtumankuuntelija]->[Matopeli]
+[Tapahtumankuuntelija]->[Aantentoistaja]
+

@@ -9,11 +9,19 @@ import aanimatopeli.domain.Mato;
 import aanimatopeli.Suunta;
 import aanimatopeli.peli.Matopeli;
 
+
+/**
+ * Näppäintenkuuntelija, joka ohjaa matoa
+ */
 public class Nappaimistonkuuntelija implements KeyListener {
 
     private Mato mato;
     
     public Nappaimistonkuuntelija(Mato mato) {
+        this.mato = mato;
+    }
+    
+    public void setMato(Mato mato) {
         this.mato = mato;
     }
     
